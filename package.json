@@ -18,8 +18,10 @@
   "homepage": "https://github.com/jordanreed23/reddit-clone#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "hbs": "^4.0.1",
-    "knex": "^0.13.0"
+    "knex": "^0.13.0",
+    "pg": "^7.3.0"
   }
 }

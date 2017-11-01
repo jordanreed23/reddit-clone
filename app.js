@@ -3,6 +3,7 @@ const app = express();
 const port = 3000 || process.env.PORT;
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
+const db = require('./db/query');
 
 
 app.use(bodyParser.urlencoded({
