@@ -1,0 +1,25 @@
+{
+  "name": "reddit-clone",
+  "version": "1.0.0",
+  "description": "a clone of reddit",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanreed23/reddit-clone.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jordanreed23/reddit-clone/issues"
+  },
+  "homepage": "https://github.com/jordanreed23/reddit-clone#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "hbs": "^4.0.1",
+    "knex": "^0.13.0"
+  }
+}
