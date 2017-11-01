@@ -3,8 +3,43 @@
   <head>
     <meta charset="utf-8">
     <title>reddit beers</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>hi</h1>
+    <header>
+      <h1>Logg-it</h1>
+      <button type="button" id="addBeer">Add beer</button>
+    </header>
+    <section class="main">
+      <h2 >Beers</h2>
+      {{#each beers}}
+      <div class="beer">
+        <form class="rating" action="/rating/{{id}}" method="post">
+          <button type="submit" name="vote" value="1">up</button>
+          <p>{{rating}}</p>
+          <button type="submit" name="vote" value="-1">down</button>
+        </form>
+        <form class="beer-box" method="post" action="/beer/{{id}}">
+          <button type="submit">
+            <h3>{{title}}</h3>
+            <img src="{{image}}" alt="beer">
+          </button>
+        </form>
+      </div>
+      {{/each}}
+    </section>
+    <form class="newBeer" action="/newbeer" method="post" style="display:none;">
+      <p class="close">X</p>
+      <label>Beer Name</label>
+      <input required type="text" name="title" placeholder="add a title">
+      <label>Image</label>
+      <input required type="text" name="image" placeholder="add an image url">
+      <label>Link</label>
+      <input required type="text" name="link" placeholder=" add a link">
+      <button type="submit">Submit
+      </button>
+    </form>
+    <script type="text/javascript" src="main.js"></script>
+
   </body>
 </html>

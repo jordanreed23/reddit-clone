@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>reddit beers</title>
+    <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+    <header>
+      <a href="/">
+      <h1>Logg-it</h1></a>
+      <button type="button" id="addComment">Add Comment</button>
+    </header>
+    <section>
+      <div class="beer-info">
+        <div class="beer-title">
+          <h1>{{beer.title}}</h1>
+          <a href="{{beer.link}}">Link to Website</a>
+        </div>
+        <img src="{{beer.image}}" alt="beer">
+      </div>
+      <div class="comments">
+        {{#each comments}}
+        <p>{{body}}</p>
+        {{/each}}
+      </div>
+      <div class="add-comment">
+        <form class="newComment" action="/newComment/{{beer.id}}" method="post" style="display:none;">
+          <p class="close">X</p>
+          <label>Comment</label>
+          <input required type="text" name="body" placeholder="add a comment">
+          <button type="submit">Submit
+          </button>
+        </form>
+      </div>
+    </section>
+
+
+    <script type="text/javascript" src="../beer.js"></script>
+
+  </body>
+</html>
