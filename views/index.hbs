@@ -15,9 +15,9 @@
       {{#each beers}}
       <div class="beer">
         <form class="rating" action="/rating/{{id}}" method="post">
-          <button type="submit" name="vote" value="1">up</button>
+          <button type="submit" name="vote" value="1">▲</button>
           <p>{{rating}}</p>
-          <button type="submit" name="vote" value="-1">down</button>
+          <button type="submit" name="vote" value="-1">▼</button>
         </form>
         <form class="beer-box" method="post" action="/beer/{{id}}">
           <button type="submit">

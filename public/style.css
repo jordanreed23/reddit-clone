@@ -6,6 +6,10 @@ html{
 body{
   margin: 0;
 }
+a{
+  text-decoration: none;
+  color: white;
+}
 header{
   background-color: grey;
   color: white;
@@ -15,8 +19,26 @@ header{
   display: flex;
   justify-content: space-between;
 }
+#addBeer{
+  background-color: white;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 4px 4px 10px black;
+  width: 20vw;
+  height: 10vh;
+  font-size: 30px;
+
+}
 .main{
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main > h2{
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 0;
 }
 .beer{
   display: flex;
@@ -24,11 +46,12 @@ header{
   align-items: center;
   margin: 10px;
 }
-.beer-box{
+.beer-box > button{
   color: white;
   background-color: grey;
-  width: 80vw;
+  width: 30vw;
   box-shadow: 2px 2px 20px black;
+  height: 20vh;
 }
 
 .rating{
@@ -36,10 +59,14 @@ header{
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  padding: 1vw;
 }
 
-.beer-box > img {
-  height: 20vh;
+.beer-box img {
+  height: 80%;
+}
+.beer-box h3{
+  margin: 0;
 }
 .newBeer{
   position: absolute;
