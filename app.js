@@ -18,6 +18,10 @@ app.get('/', (req,res) => {
   res.render('index');
 });
 
+app.get('/hello', (req,res) => {
+  res.send('index');
+});
+
 app.listen(port, (req,res) => {
   console.log("You're doing wonderful! :)");
 });
