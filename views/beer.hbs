@@ -1,42 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>reddit beers</title>
-    <link rel="stylesheet" href="../style.css">
-  </head>
-  <body>
-    <header>
-      <a href="/">
-      <h1>Logg-it</h1></a>
-      <button type="button" id="addComment">Add Comment</button>
-    </header>
-    <section>
-      <div class="beer-info">
-        <div class="beer-title">
-          <h1>{{beer.title}}</h1>
-          <a href="{{beer.link}}">Link to Website</a>
-        </div>
-        <img src="{{beer.image}}" alt="beer">
+
+<head>
+  <meta charset="utf-8">
+  <title>reddit beers</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <header>
+    <a href="/"><h1>Beer Lager</h1></a>
+      <div class="">
+        <button type="button" id="updateBeer">Update Beer</button>
+        <button type="button" id="addComment">Add Comment</button>
       </div>
-      <div class="comments">
-        {{#each comments}}
+  </header>
+  <section>
+    <div class="beer-info">
+      <div class="beer-title">
+        <h1>{{beer.title}}</h1>
+        <a href="{{beer.link}}">Link to Website</a>
+      </div>
+      <img src="{{beer.image}}" alt="beer">
+    </div>
+    <div class="comments">
+      {{#each comments}}
+      <div class="eachComment">
         <p>{{body}}</p>
-        {{/each}}
-      </div>
-      <div class="add-comment">
-        <form class="newComment" action="/newComment/{{beer.id}}" method="post" style="display:none;">
-          <p class="close">X</p>
-          <label>Comment</label>
-          <input required type="text" name="body" placeholder="add a comment">
-          <button type="submit">Submit
-          </button>
+        <form class="deleteComment" action="/deleteComment/{{beer_id}}" method="post">
+         <button type="submit" value="{{id}}" name="id">Delete Comment</button>
         </form>
       </div>
-    </section>
+      {{/each}}
+    </div>
+    <div class="add-comment">
+      <form class="newComment" action="/newComment/{{beer.id}}" method="post" style="display:none;">
+        <p class="close">X</p>
+        <label>Comment</label>
+        <input required type="text" name="body" placeholder="add a comment">
+        <button type="submit">Submit
+          </button>
+      </form>
+    </div>
+
+    <form class="updateBeer newBeer" action="/updatebeer/{{beer.id}}" method="post" style="display:none;">
+      <p class="close">X</p>
+      <label>Beer Name</label>
+      <input required type="text" name="title" placeholder="add a title" value="{{beer.title}}">
+      <label>Image</label>
+      <input required type="text" name="image" placeholder="add an image url" value="{{beer.image}}">
+      <label>Link</label>
+      <input required type="text" name="link" placeholder=" add a link" value="{{beer.link}}">
+      <button type="submit">Submit
+      </button>
+    </form>
+
+  </section>
 
 
-    <script type="text/javascript" src="../beer.js"></script>
+  <script type="text/javascript" src="../beer.js"></script>
 
-  </body>
+</body>
+
 </html>

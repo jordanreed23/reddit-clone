@@ -31,7 +31,7 @@ app.get('/beer/:id', (req,res) => {
       .then(comments =>{
         res.render('beer', {
           beer: beer,
-          comments: comments,
+          comments: comments
         });
       });
     })
@@ -84,8 +84,22 @@ app.post('/newComment/:id', (req,res) => {
   });
 });
 
-app.get('/hello', (req,res) => {
-  res.send('index');
+app.post('/updatebeer/:id', (req, res)=>{
+  db.updateBeer(req.params.id, req.body)
+  .then(updated =>{
+    console.log('Started from the bottom now we here.'+updated);
+    res.redirect('/beer/'+req.params.id);
+  });
+});
+
+app.post('/deleteComment/:id', (req, res) => {
+  console.log('I\'m tryna delete');
+  console.log(req.body.id);
+  db.deleteComment(req.body.id)
+  .then(stuff =>{
+    console.log('deleted');
+    res.redirect('/beer/'+req.params.id);
+  });
 });
 
 app.listen(port, (req,res) => {

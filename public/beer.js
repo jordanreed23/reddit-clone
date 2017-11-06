@@ -9,3 +9,15 @@ addCommentButton.addEventListener('click', (event)=>{
 close.addEventListener('click', (event) => {
   addCommentForm.style.display = 'none';
 });
+
+let updateBeerButton = document.getElementById('updateBeer');
+let updateBeerForm = document.getElementsByClassName('updateBeer')[0];
+let closeUpdate = document.getElementsByClassName('close')[1];
+
+updateBeerButton.addEventListener('click', (event)=>{
+  updateBeerForm.style.display = 'flex';
+});
+
+closeUpdate.addEventListener('click', (event) => {
+  updateBeerForm.style.display = 'none';
+});

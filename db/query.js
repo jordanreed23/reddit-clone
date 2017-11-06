@@ -24,6 +24,13 @@ function insertComment(comment){
   return db('comments').insert(comment, '*');
 }
 
+function updateBeer(id, info){
+  return db('beers').where('id', id).update(info);
+}
+
+function deleteComment(id){
+  return db('comments').where('id',id).del();
+}
 
 module.exports = {
   getBeers,
@@ -32,4 +39,6 @@ module.exports = {
   insertBeer,
   getComments,
   insertComment,
+  updateBeer,
+  deleteComment,
 };
