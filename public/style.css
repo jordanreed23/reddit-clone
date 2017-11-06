@@ -46,6 +46,7 @@ header{
   align-items: center;
   margin: 10px;
 }
+
 .beer-box > button{
   color: white;
   background-color: grey;
@@ -68,13 +69,22 @@ header{
 .beer-box h3{
   margin: 0;
 }
+.beer-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 10px;
+}
+.beer-info > img{
+  height: 40vh;
+}
 .newBeer{
   position: absolute;
   top: 10vh;
-  left: 40vh;
+  left: 10vw;
   background-color: white;
   box-shadow: 0px 0px 20px black;
-  width: 40vw;
+  width: 80vw;
   height: 40vh;
   flex-direction: column;
   justify-content: center;
@@ -111,6 +121,6 @@ header{
   padding: 10px;
   margin: 10px;
   background-color: beige;
-  box-shadow: 2px 2px 10px black;
+  box-shadow: 5px 5px 10px black;
   align-content: center;
 }
