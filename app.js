@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 const db = require('./db/query');
 
 
@@ -10,6 +11,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
+app.use(methodOverride('_method'));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'hbs');
@@ -84,7 +86,7 @@ app.post('/newComment/:id', (req,res) => {
   });
 });
 
-app.post('/updatebeer/:id', (req, res)=>{
+app.put('/updatebeer/:id', (req, res)=>{
   db.updateBeer(req.params.id, req.body)
   .then(updated =>{
     console.log('Started from the bottom now we here.'+updated);
@@ -92,7 +94,7 @@ app.post('/updatebeer/:id', (req, res)=>{
   });
 });
 
-app.post('/deleteComment/:id', (req, res) => {
+app.delete('/deleteComment/:id', (req, res) => {
   console.log('I\'m tryna delete');
   console.log(req.body.id);
   db.deleteComment(req.body.id)

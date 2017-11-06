@@ -27,7 +27,7 @@
       {{#each comments}}
       <div class="eachComment">
         <p>{{body}}</p>
-        <form class="deleteComment" action="/deleteComment/{{beer_id}}" method="post">
+        <form class="deleteComment" action="/deleteComment/{{beer_id}}?_method=DELETE" method="post">
          <button type="submit" value="{{id}}" name="id">Delete Comment</button>
         </form>
       </div>
@@ -43,7 +43,7 @@
       </form>
     </div>
 
-    <form class="updateBeer newBeer" action="/updatebeer/{{beer.id}}" method="post" style="display:none;">
+    <form class="updateBeer newBeer" action="/updatebeer/{{beer.id}}?_method=PUT" method="post" style="display:none;">
       <p class="close">X</p>
       <label>Beer Name</label>
       <input required type="text" name="title" placeholder="add a title" value="{{beer.title}}">
